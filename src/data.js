@@ -91,6 +91,76 @@ const resources = {
             "Three-backup redundant system in two locations, three-level disaster recovery, virus, accidental deletion, abnormality and failure, etc., recovery in seconds",
         },
       ],
+      newslider: [
+        {
+          title: "",
+          desc: "We provide industry-leading Crown Sports, Sabah Sports, CMD Sports, SABA Sports, NBB Sports, IM Sports, AG Sports, BB Sports, SBO Sports, ESB Sports, TF Sports, and AI Sports, presenting players with the highest odds and the smoothest betting experience. Sports betting, no video is not exciting. DOING package network provides the most comprehensive and high-definition event videos covering the entire network, customer diversion, customer retention, omnipotent",
+        },
+        {
+          title: "",
+          desc: "ICG Electronics, PP Electronics, HC Electronics, FC Electronics, FG Electronics, BNG Electronics, MG Electronics, PG Electronics, CQ9 Electronics, PT Electronics, BB Electronics, SW Electronics, AG Electronics, PS Electronics, RSG Electronics, JOKER Electronics, JILI Electronics, MW Electronics, Rich88 Electronics, KA Electronics, JDB Electronics, GNS Electronics, etc. have always been the hottest game suppliers in the industry. DOING Baowang has joined hands with many manufacturers to help you create your own electronic entertainment platform as quickly as possible, with hundreds of games for users to choose from.",
+        },
+        {
+          title: "",
+          desc: "Kaiyuan chess and cards, JDB chess and cards, Leyou chess and cards, CQ9 chess and cards, MP chess and cards, KX chess and cards, whether self-developed or partnered, exquisite picture quality and smooth experience will help you establish a good reputation and create a boutique platform",
+        },
+        {
+          title: "",
+          desc: "The most comprehensive lottery types, the most stable prize sources, the richest ways to play, the most stable and fastest lottery results are the best ways for you to attract new customers. We also provide self-developed lottery tickets to make your platform more powerful.",
+        },
+        {
+          title: "",
+          desc: "We provide the best live venue games in the industry, including AG Live, AB Live, BB Live, BG Live, DG Live, EBET Live, EVO Live, EZUGI Live, MG Live, SA Live, WM Live, PP Live, etc., with exquisite graphics and fair wins and losses. We use trust to help you win the market and win the trust of users with word of mouth.",
+        },
+        {
+          title: "",
+          desc: "ESB E-sports, the industry's top e-sports event platform partner, provides the latest and most popular e-sports event predictions, as well as the most popular e-sports videos and the latest e-sports information services to help you build your brand and increase popularity",
+        },
+      ],
+      cardData: [
+        {
+          title: "Top-level computer room",
+          desc: "Top-level server hardware configuration provides data security and reliability. RESTful API enables storage and access anywhere on the Internet",
+        },
+        {
+          title: "Safety protection",
+          desc: "Self-developed CDN high-defense system, 360-degree security protection around the clock, providing 1T ultra-large protection bandwidth, effectively defending against T-level DDOS attacks and millions of CC concurrent attacks",
+        },
+        {
+          title: "Dedicated lines",
+          desc: "Dedicated fiber optic lines directly connect to important business markets such as the mainland, the Philippines, Hong Kong, Taiwan, and Japan. High-speed networks are spread across Southeast Asia, super fast and stable",
+        },
+        {
+          title: "Anti-hijacking system",
+          desc: "Self-developed anti-hijacking browser and underlying authentication algorithm, the communication link uses military-grade encryption algorithm to ensure the security and reliability of client and server communication",
+        },
+      ],
+      cardData2: [
+        {
+          title: "Industry reputation is trustworthy",
+          desc: "Select six major brand venues to create a new entertainment experience and make your brand stand out",
+        },
+        {
+          title: "Exclusive service, worry-free and fast",
+          desc: "Exclusive VIP service team, expert one-on-one guidance operation, personalized service, we are more professional",
+        },
+        {
+          title: "Unique cooperation model",
+          desc: "DOING Network innovates cooperation mode, customized layout, professional construction, 7/24 all year round without maintenance, meticulously crafted to create your exclusive brand",
+        },
+        {
+          title: "Innovation and financial security",
+          desc: "Innovation leads the industry technology + financial services, making the platform business and funds",
+        },
+        {
+          title: "Professional technical team for worry-free operation",
+          desc: "High-standard front-end and back-end full customer customization, high-quality customer service, upgraded",
+        },
+        {
+          title: "Comprehensive support and assistance",
+          desc: "DOING provides a large amount of support funds for the initial establishment of the platform, helping ",
+        },
+      ],
     },
   },
   zh: {
@@ -162,6 +232,76 @@ const resources = {
           item4: "数据恢复",
           desc4:
             "在两个位置的三重备份冗余系统，三级灾难恢复，病毒、意外删除、异常和故障等，秒内恢复",
+        },
+      ],
+      newslider: [
+        {
+          title: "",
+          desc: "我们提供行业领先的Crown Sports、Sabah Sports、CMD Sports、SABA Sports、NBB Sports、IM Sports、AG Sports、BB Sports、SBO Sports、ESB Sports、TF Sports和AI Sports，为玩家提供最高的赔率和最流畅的投注体验。体育博彩，没有视频就没有乐趣。DOING包网络提供最全面和高清的赛事视频，涵盖整个网络，客户分流，客户留存，万能",
+        },
+        {
+          title: "",
+          desc: "ICG电子、PP电子、HC电子、FC电子、FG电子、BNG电子、MG电子、PG电子、CQ9电子、PT电子、BB电子、SW电子、AG电子、PS电子、RSG电子、JOKER电子、JILI电子、MW电子、Rich88电子、KA电子、JDB电子、GNS电子等，一直以来都是行业内最热门的游戏供应商。DOING宝网与众多制造商携手合作，帮助您尽快创建自己的电子娱乐平台，提供数百款供用户选择的游戏。",
+        },
+        {
+          title: "",
+          desc: "凯元棋牌、JDB棋牌、乐游棋牌、CQ9棋牌、MP棋牌、KX棋牌，无论是自开发还是合作，精致的画质和流畅的体验将帮助您建立良好的声誉，创建精品平台。",
+        },
+        {
+          title: "",
+          desc: "最全面的彩票种类，最稳定的奖源，最丰富的玩法，最稳定和最快的彩票结果是您吸引新客户的最佳方式。我们还提供自开发的彩票，使您的平台更具竞争力。",
+        },
+        {
+          title: "",
+          desc: "我们提供行业内最好的现场场馆游戏，包括AG Live、AB Live、BB Live、BG Live、DG Live、EBET Live、EVO Live、EZUGI Live、MG Live、SA Live、WM Live、PP Live等，拥有精致的图形和公平的输赢。我们以信任帮助您赢得市场，并用口碑赢得用户的信任。",
+        },
+        {
+          title: "",
+          desc: "ESB电子竞技，行业顶尖的电子竞技赛事平台合作伙伴，提供最新和最热门的电子竞技赛事预测，以及最受欢迎的电子竞技视频和最新的电子竞技信息服务，帮助您建立品牌，提高知名度。",
+        },
+      ],
+      cardData: [
+        {
+          title: "顶级计算机机房",
+          desc: "顶级服务器硬件配置提供数据安全和可靠性。RESTful API使数据存储和访问无处不在。",
+        },
+        {
+          title: "安全保护",
+          desc: "自开发的CDN高防系统，提供360度安全保护，全天候提供1T超大防护带宽，有效抵御T级DDOS攻击和数百万CC并发攻击。",
+        },
+        {
+          title: "专线",
+          desc: "专用光纤线路直接连接到大陆、菲律宾、香港、台湾和日本等重要商业市场。高速网络覆盖东南亚，超快且稳定。",
+        },
+        {
+          title: "反劫持系统",
+          desc: "自开发的反劫持浏览器和底层认证算法，通信链路使用军用级加密算法，确保客户端与服务器通信的安全性和可靠性。",
+        },
+      ],
+      cardData2: [
+        {
+          title: "行业声誉值得信赖",
+          desc: "选择六大品牌场馆，创造全新娱乐体验，让您的品牌脱颖而出。",
+        },
+        {
+          title: "专属服务，无忧快速",
+          desc: "专属VIP服务团队，专家一对一指导运营，个性化服务，我们更专业。",
+        },
+        {
+          title: "独特的合作模式",
+          desc: "DOING网络创新合作模式，定制布局，专业建设，全年无休7/24无维护，精心打造您的专属品牌。",
+        },
+        {
+          title: "创新与金融安全",
+          desc: "创新引领行业技术+金融服务，实现平台业务和资金的结合。",
+        },
+        {
+          title: "专业技术团队，运营无忧",
+          desc: "高标准的前端和后端全客户定制，高质量的客户服务，升级版。",
+        },
+        {
+          title: "全面支持与帮助",
+          desc: "DOING为平台初始建立提供大量支持资金，助力您的发展。",
         },
       ],
     },

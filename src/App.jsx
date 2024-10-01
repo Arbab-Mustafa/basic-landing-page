@@ -1,8 +1,12 @@
 import "./App.css";
+import GameSlider from "./components/GameCenter";
+
 import Hero from "./components/Hero";
 import Navvar from "./components/Navvar";
 import SliderComponent from "./components/ProductsSlider";
+import Service from "./components/Service";
 import Slider1 from "./components/Slider1";
+import CardComponent from "./components/TechnicalExcellence";
 
 function App() {
   return (
@@ -13,6 +17,9 @@ function App() {
         <Slider1 />
       </div>
       <SliderComponent />
+      <GameSlider />
+      <CardComponent />
+      <Service />
     </div>
   );
 }
