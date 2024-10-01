@@ -1,4 +1,6 @@
 import "./App.css";
+import Busniess from "./components/BusinessCooperation";
+import Footer from "./components/footer";
 import GameSlider from "./components/GameCenter";
 
 import Hero from "./components/Hero";
@@ -7,10 +9,11 @@ import SliderComponent from "./components/ProductsSlider";
 import Service from "./components/Service";
 import Slider1 from "./components/Slider1";
 import CardComponent from "./components/TechnicalExcellence";
+import ImageSlider from "./components/TemplateCase";
 
 function App() {
   return (
-    <div className="   ">
+    <div className=" bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]   ">
       <Navvar />
       <div className="bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
         <Hero />
@@ -20,6 +23,9 @@ function App() {
       <GameSlider />
       <CardComponent />
       <Service />
+      <ImageSlider />
+      <Busniess />
+      <Footer />
     </div>
   );
 }

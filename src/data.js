@@ -161,6 +161,33 @@ const resources = {
           desc: "DOING provides a large amount of support funds for the initial establishment of the platform, helping ",
         },
       ],
+      busniess: [
+        {
+          heading: "High Security",
+          desc: "We provide top-notch security solutions for your data.",
+        },
+        {
+          heading: "Fast Performance",
+          desc: "Our platform ensures lightning-fast performance across all devices.",
+        },
+        {
+          heading: "Global Accessibility",
+          desc: "Access your data from anywhere around the globe with ease.",
+        },
+        {
+          heading: "User Friendly",
+          desc: "Our intuitive interface ensures ease of use for all users.",
+        },
+        {
+          heading: "24/7 Support",
+          desc: "We provide around-the-clock support for all your needs.",
+        },
+      ],
+      btn: [
+        {
+          title: "Contact Business",
+        },
+      ],
     },
   },
   zh: {
@@ -302,6 +329,34 @@ const resources = {
         {
           title: "全面支持与帮助",
           desc: "DOING为平台初始建立提供大量支持资金，助力您的发展。",
+        },
+      ],
+      business: [
+        {
+          heading: "高安全性",
+          desc: "我们为您的数据提供一流的安全解决方案。",
+        },
+        {
+          heading: "快速性能",
+          desc: "我们的平台确保所有设备上的闪电般快速性能。",
+        },
+        {
+          heading: "全球可访问性",
+          desc: "轻松从全球任何地方访问您的数据。",
+        },
+        {
+          heading: "用户友好",
+          desc: "我们直观的界面确保所有用户都能轻松使用。",
+        },
+        {
+          heading: "全天候支持",
+          desc: "我们提供全天候的支持，以满足您的所有需求。",
+        },
+      ],
+
+      btn: [
+        {
+          title: "联系商务",
         },
       ],
     },
