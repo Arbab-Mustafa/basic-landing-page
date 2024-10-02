@@ -48,7 +48,10 @@ const Service = () => {
   ];
 
   return (
-    <div className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
+    <div
+      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      id="serviceAdvantages"
+    >
       <div className="w-[80%]  mx-auto  justify-center md:gap-4  py-4 md:py-8 flex flex-wrap gap-2 ">
         {CardData.map((card, index) => (
           <div

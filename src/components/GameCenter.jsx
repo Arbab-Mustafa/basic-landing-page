@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // Import icons for the slider
@@ -167,8 +167,23 @@ const SliderComponent = () => {
     setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === slidesData.length - 1 ? 0 : prev + 1
+      );
+    }, 3500);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [slidesData.length]);
+
   return (
-    <div className="relative mx-auto py-10 md:py-7 bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]">
+    <div
+      className="relative mx-auto py-10 md:py-7 bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
+      id="gameCenter"
+    >
       <div className="flex flex-col items-center max-w-screen-lg mx-auto">
         {slidesData.map((slide, index) => (
           <div

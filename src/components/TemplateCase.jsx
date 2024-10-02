@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 const images = [
   "https://doing.social/img/07.aa563c24.jpg",
@@ -55,8 +55,23 @@ const ImageSlider = () => {
     setSelectedImage(null);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev >= images.length - itemsPerPage ? 0 : prev + 1
+      );
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [images.length]);
+
   return (
-    <div className="w-full flex flex-col items-center justify-center p-3 md:p-6 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
+    <div
+      className="w-full flex flex-col items-center justify-center p-3 md:p-6 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      id="templateCase"
+    >
       {/* Slider container */}
       <div className="w-full max-w-6xl flex justify-center space-x-2">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:h-fit lg:grid-cols-3 xl:grid-cols-3 gap-3">

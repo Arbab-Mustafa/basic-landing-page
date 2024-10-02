@@ -6,13 +6,29 @@ const resources = {
   en: {
     translation: {
       navbar: [
-        { key: "frontPage", label: "Front Page" },
-        { key: "ultimateProduct", label: "Ultimate Product" },
-        { key: "gameCenter", label: "Game Center" },
-        { key: "technicalExcellence", label: "Technical Excellence" },
-        { key: "serviceAdvantages", label: "Service Advantages" },
-        { key: "templateCase", label: "Template Case" },
-        { key: "businessCooperation", label: "Business Cooperation" },
+        { key: "frontPage", label: "Front Page", id: "#frontPage" },
+        {
+          key: "ultimateProduct",
+          label: "Ultimate Product",
+          id: "#ultimateProduct",
+        },
+        { key: "gameCenter", label: "Game Center", id: "#gameCenter" },
+        {
+          key: "technicalExcellence",
+          label: "Technical Excellence",
+          id: "#technicalExcellence",
+        },
+        {
+          key: "serviceAdvantages",
+          label: "Service Advantages",
+          id: "#serviceAdvantages",
+        },
+        { key: "templateCase", label: "Template Case", id: "#templateCase" },
+        {
+          key: "businessCooperation",
+          label: "Business Cooperation",
+          id: "#businessCooperation",
+        },
       ],
       link: {
         title: "Demo entrance",
@@ -193,13 +209,25 @@ const resources = {
   zh: {
     translation: {
       navbar: [
-        { key: "frontPage", label: "首页" },
-        { key: "ultimateProduct", label: "终极产品" },
-        { key: "gameCenter", label: "游戏中心" },
-        { key: "technicalExcellence", label: "技术卓越" },
-        { key: "serviceAdvantages", label: "服务优势" },
-        { key: "templateCase", label: "模板案例" },
-        { key: "businessCooperation", label: "商务合作" },
+        { key: "frontPage", label: "首页", id: "#frontPage" },
+        { key: "ultimateProduct", label: "终极产品", id: "#ultimateProduct" },
+        { key: "gameCenter", label: "游戏中心", id: "#gameCenter" },
+        {
+          key: "technicalExcellence",
+          label: "技术卓越",
+          id: "#technicalExcellence",
+        },
+        {
+          key: "serviceAdvantages",
+          label: "服务优势",
+          id: "#serviceAdvantages",
+        },
+        { key: "templateCase", label: "模板案例", id: "#templateCase" },
+        {
+          key: "businessCooperation",
+          label: "商务合作",
+          id: "#businessCooperation",
+        },
       ],
       link: {
         title: "演示入口",
@@ -353,7 +381,6 @@ const resources = {
           desc: "我们提供全天候的支持，以满足您的所有需求。",
         },
       ],
-
       btn: [
         {
           title: "联系商务",

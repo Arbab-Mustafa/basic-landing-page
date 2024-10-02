@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = [
   { id: 1, src: "https://doing.social/img/1.8f8623c7.png" },
@@ -21,8 +21,18 @@ const Hero = () => {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3500);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [images.length]);
+
   return (
-    <div className="w-full overflow-x-hidden  mt-10 py-2">
+    <div className="w-full overflow-x-hidden  mt-10 py-2" id="frontPage">
       {/* Image Slider */}
       <div className="relative w-full h-56 md:h-72    z-1  overflow-hidden">
         <div

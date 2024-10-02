@@ -65,7 +65,9 @@ const Navvar = () => {
                 <nav aria-label="Global">
                   <ul className="flex items-center gap-6 text-xs md:text-sm">
                     {t("navbar", { returnObjects: true }).map((item) => (
-                      <li key={item.key}>{item.label}</li>
+                      <li key={item.key}>
+                        <a href={item.id}>{item.label}</a>
+                      </li>
                     ))}
                   </ul>
                 </nav>
@@ -144,7 +146,9 @@ const Navvar = () => {
                   <nav aria-label="Global">
                     <ul className="flex flex-col items-center gap-6 text-xs md:text-sm">
                       {t("navbar", { returnObjects: true }).map((item) => (
-                        <li key={item.key}>{item.label}</li>
+                        <li key={item.key}>
+                          <a href={item.id}>{item.label}</a>
+                        </li>
                       ))}
                     </ul>
                   </nav>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"; // Importing for translations
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Importing icon components
 
@@ -27,6 +27,18 @@ const Slider1 = () => {
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === slidesData.length - 1 ? 0 : prev + 1
+      );
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [slidesData.length]);
 
   return (
     <div

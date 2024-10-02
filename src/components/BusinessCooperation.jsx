@@ -40,7 +40,10 @@ const Busniess = () => {
   ];
 
   return (
-    <div className="  px-4 py-8  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
+    <div
+      className="  px-4 py-8  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      id="businessCooperation"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5   gap-11 md:gap-20 md:w-[80%] mx-auto">
         {slidesData.map((slide, index) => (
           <div
