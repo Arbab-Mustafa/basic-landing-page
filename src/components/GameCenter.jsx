@@ -16,6 +16,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { BsUmbrellaFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { RiDeviceRecoverLine } from "react-icons/ri";
+import HeadingComponent from "./H2";
 
 // Define the icons as an array for easier management
 const icons = [
@@ -184,6 +185,10 @@ const SliderComponent = () => {
       className="relative mx-auto py-10 md:py-7 bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
       id="gameCenter"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.1.headingKey")}
+        paragraphKey={t("headingsData.1.paragraphKey")}
+      />
       <div className="flex flex-col items-center max-w-screen-lg mx-auto">
         {slidesData.map((slide, index) => (
           <div

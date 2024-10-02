@@ -29,7 +29,7 @@ const Hero = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [images.length]);
+  }, []);
 
   return (
     <div className="w-full overflow-x-hidden  mt-10 py-2" id="frontPage">

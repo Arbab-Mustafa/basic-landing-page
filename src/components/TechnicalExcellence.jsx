@@ -6,6 +6,7 @@ import { PiComputerTowerFill } from "react-icons/pi";
 import { MdVerifiedUser } from "react-icons/md";
 import { IoRocketSharp } from "react-icons/io5";
 import { MdLock } from "react-icons/md";
+import HeadingComponent from "./H2";
 
 const CardComponent = () => {
   const { t } = useTranslation();
@@ -39,6 +40,10 @@ const CardComponent = () => {
       className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="technicalExcellence"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.2.headingKey")}
+        paragraphKey={t("headingsData.2.paragraphKey")}
+      />
       <div className="w-[90%]  mx-auto  justify-center md:gap-4  py-4 md:py-8 flex flex-wrap gap-2 ">
         {CardData.map((card, index) => (
           <div

@@ -177,7 +177,7 @@ const resources = {
           desc: "DOING provides a large amount of support funds for the initial establishment of the platform, helping ",
         },
       ],
-      busniess: [
+      business: [
         {
           heading: "High Security",
           desc: "We provide top-notch security solutions for your data.",
@@ -202,6 +202,34 @@ const resources = {
       btn: [
         {
           title: "Contact Business",
+        },
+      ],
+      headingsData: [
+        {
+          headingKey: "Ultimate product",
+          paragraphKey: "Years of experience in the industry",
+        },
+        {
+          headingKey: "Game Center",
+          paragraphKey:
+            "Select the industry's top games to bring together a rich variety of gameplay",
+        },
+        {
+          headingKey: "Technical excellence",
+          paragraphKey: "Top technology to protect you",
+        },
+        {
+          headingKey: "Service Advantages",
+          paragraphKey:
+            "Committed to providing customers with comprehensive services",
+        },
+        {
+          headingKey: "Template Case",
+          paragraphKey: "A wide range of high-end custom designs",
+        },
+        {
+          headingKey: "A wide range of high-end custom designs",
+          paragraphKey: "Five easy steps to quickly open a site",
         },
       ],
     },
@@ -362,28 +390,54 @@ const resources = {
       business: [
         {
           heading: "高安全性",
-          desc: "我们为您的数据提供一流的安全解决方案。",
+          desc: "我们为您的数据提供顶级的安全解决方案。",
         },
         {
-          heading: "快速性能",
-          desc: "我们的平台确保所有设备上的闪电般快速性能。",
+          heading: "高速性能",
+          desc: "我们的平台确保在所有设备上都有闪电般的性能。",
         },
         {
           heading: "全球可访问性",
-          desc: "轻松从全球任何地方访问您的数据。",
+          desc: "您可以轻松地从全球任何地方访问您的数据。",
         },
         {
           heading: "用户友好",
-          desc: "我们直观的界面确保所有用户都能轻松使用。",
+          desc: "我们的直观界面确保所有用户都能轻松使用。",
         },
         {
-          heading: "全天候支持",
-          desc: "我们提供全天候的支持，以满足您的所有需求。",
+          heading: "24/7支持",
+          desc: "我们提供全天候的支持，满足您的所有需求。",
         },
       ],
       btn: [
         {
           title: "联系商务",
+        },
+      ],
+      headingsData: [
+        {
+          headingKey: "终极产品",
+          paragraphKey: "多年行业经验",
+        },
+        {
+          headingKey: "游戏中心",
+          paragraphKey: "精选行业顶尖游戏，汇聚丰富的玩法",
+        },
+        {
+          headingKey: "技术卓越",
+          paragraphKey: "顶尖技术为您护航",
+        },
+        {
+          headingKey: "服务优势",
+          paragraphKey: "致力于为客户提供全方位服务",
+        },
+        {
+          headingKey: "模板案例",
+          paragraphKey: "广泛的高端定制设计",
+        },
+        {
+          headingKey: "快速站点搭建",
+          paragraphKey: "五个简单步骤快速开启站点",
         },
       ],
     },

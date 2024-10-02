@@ -9,6 +9,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import { RiBox3Fill } from "react-icons/ri";
 import { FaPeoplePulling } from "react-icons/fa6";
 import { GiSecretBook } from "react-icons/gi";
+import HeadingComponent from "./H2";
 const Service = () => {
   const { t } = useTranslation();
 
@@ -52,6 +53,10 @@ const Service = () => {
       className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="serviceAdvantages"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.3.headingKey")}
+        paragraphKey={t("headingsData.3.paragraphKey")}
+      />
       <div className="w-[80%]  mx-auto  justify-center md:gap-4  py-4 md:py-8 flex flex-wrap gap-2 ">
         {CardData.map((card, index) => (
           <div

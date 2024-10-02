@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import HeadingComponent from "./H2";
+import { useTranslation } from "react-i18next";
 const images = [
   "https://doing.social/img/07.aa563c24.jpg",
   "https://doing.social/img/08.658b00b4.jpg",
@@ -27,6 +29,7 @@ const images = [
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+  const { t } = useTranslation();
 
   // Number of images to show per screen size
   const itemsPerPage = window.innerWidth > 1024 ? 9 : 2; // Adjust for large screens (laptops) and small screens (mobiles)
@@ -65,13 +68,17 @@ const ImageSlider = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [images.length]);
+  }, [itemsPerPage]);
 
   return (
     <div
       className="w-full flex flex-col items-center justify-center p-3 md:p-6 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="templateCase"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.4.headingKey")}
+        paragraphKey={t("headingsData.4.paragraphKey")}
+      />
       {/* Slider container */}
       <div className="w-full max-w-6xl flex justify-center space-x-2">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:h-fit lg:grid-cols-3 xl:grid-cols-3 gap-3">

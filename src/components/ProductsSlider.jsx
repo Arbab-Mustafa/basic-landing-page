@@ -16,6 +16,7 @@ import { TbWorldWww } from "react-icons/tb";
 import { BsUmbrellaFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { RiDeviceRecoverLine } from "react-icons/ri";
+import HeadingComponent from "./H2";
 
 const SliderComponent = () => {
   const { t } = useTranslation(); // Hook for translations
@@ -155,6 +156,10 @@ const SliderComponent = () => {
       className="relative mx-auto  py-10  md:py-7  bg-cover  bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')] "
       id="ultimateProduct"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.0.headingKey")}
+        paragraphKey={t("headingsData.0.paragraphKey")}
+      />
       {/* Slide Container */}
       <div className="flex flex-col items-center max-w-screen-lg mx-auto">
         {/* Slide Content */}

@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 // import { FaLock, FaRocket, FaGlobe, FaUser, FaHeadset } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi"; // Example icons
 import { TbNotes } from "react-icons/tb";
@@ -6,6 +5,8 @@ import { BiMessageSquareDetail } from "react-icons/bi";
 
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
 import { MdSignalCellularAlt } from "react-icons/md";
+import { useTranslation } from "react-i18next";
+import HeadingComponent from "./H2";
 
 const Busniess = () => {
   const { t } = useTranslation(); // Hook for translations
@@ -13,28 +14,28 @@ const Busniess = () => {
   // Define slide data with translations and icons
   const slidesData = [
     {
-      title: t("busniess.0.heading"),
-      description: t("busniess.0.desc"),
+      title: t("business.0.heading"),
+      description: t("business.0.desc"),
       Icon: FiPhoneCall, // Example icon for slide 1
     },
     {
-      title: t("busniess.1.heading"),
-      description: t("busniess.1.desc"),
+      title: t("business.1.heading"),
+      description: t("business.1.desc"),
       Icon: TbNotes, // Example icon for slide 2
     },
     {
-      title: t("busniess.2.heading"),
-      description: t("busniess.2.desc"),
+      title: t("business.2.heading"),
+      description: t("business.2.desc"),
       Icon: BiMessageSquareDetail, // Example icon for slide 3
     },
     {
-      title: t("busniess.3.heading"),
-      description: t("busniess.3.desc"),
+      title: t("business.3.heading"),
+      description: t("business.3.desc"),
       Icon: HiOutlineSquare3Stack3D, // Example icon for slide 4
     },
     {
-      title: t("busniess.4.heading"),
-      description: t("busniess.4.desc"),
+      title: t("business.4.heading"),
+      description: t("business.4.desc"),
       Icon: MdSignalCellularAlt, // Example icon for slide 5
     },
   ];
@@ -44,6 +45,10 @@ const Busniess = () => {
       className="  px-4 py-8  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="businessCooperation"
     >
+      <HeadingComponent
+        headingKey={t("headingsData.5.headingKey")}
+        paragraphKey={t("headingsData.5.paragraphKey")}
+      />
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5   gap-11 md:gap-20 md:w-[80%] mx-auto">
         {slidesData.map((slide, index) => (
           <div
