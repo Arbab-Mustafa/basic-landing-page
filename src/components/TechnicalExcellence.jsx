@@ -7,9 +7,20 @@ import { MdVerifiedUser } from "react-icons/md";
 import { IoRocketSharp } from "react-icons/io5";
 import { MdLock } from "react-icons/md";
 import HeadingComponent from "./H2";
+import { motion, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useScroll } from "framer-motion";
 
 const CardComponent = () => {
   const { t } = useTranslation();
+  const ref = useRef(null); // Create a reference to the container
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Trigger animations based on scroll position
+  });
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], ["90deg", " 0deg"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
   // Define the card data
   const CardData = [
@@ -39,6 +50,7 @@ const CardComponent = () => {
     <div
       className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="technicalExcellence"
+      ref={ref}
     >
       <HeadingComponent
         headingKey={t("headingsData.2.headingKey")}
@@ -46,7 +58,8 @@ const CardComponent = () => {
       />
       <div className="w-[90%]  mx-auto  justify-center md:gap-4  py-4 md:py-8 flex flex-wrap gap-2 ">
         {CardData.map((card, index) => (
-          <div
+          <motion.div
+            style={{ rotateX, opacity }}
             key={index}
             className=" border  border-[#4D4D51] rounded-lg shadow-md md:rounded-lg p-6  md:w-[33rem] py-6 md:py-8  text-white  bg-gradient-to-br from-[#2E2F32] to-[#38393C] "
           >
@@ -59,7 +72,7 @@ const CardComponent = () => {
               </div>
             </div>
             <p className="text-white">{card.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

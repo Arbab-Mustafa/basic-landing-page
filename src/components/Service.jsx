@@ -10,8 +10,11 @@ import { RiBox3Fill } from "react-icons/ri";
 import { FaPeoplePulling } from "react-icons/fa6";
 import { GiSecretBook } from "react-icons/gi";
 import HeadingComponent from "./H2";
+import { useRef } from "react";
+
 const Service = () => {
   const { t } = useTranslation();
+  const ref = useRef(null); // Create a reference to the container
 
   // Define the card data
   const CardData = [
@@ -52,6 +55,7 @@ const Service = () => {
     <div
       className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="serviceAdvantages"
+      ref={ref}
     >
       <HeadingComponent
         headingKey={t("headingsData.3.headingKey")}
@@ -61,7 +65,7 @@ const Service = () => {
         {CardData.map((card, index) => (
           <div
             key={index}
-            className=" border  flex flex-col border-[#4D4D51] rounded-lg shadow-md md:rounded-lg p-6  md:w-[20rem] py-6 md:py-8  text-white  bg-gradient-to-br from-[#2E2F32] to-[#38393C] bg-[#38393C]  "
+            className=" border  flex flex-col border-[#4D4D51] rounded-lg shadow-md md:rounded-lg   p-6  md:w-[20rem] py-6 md:py-8  text-white  bg-gradient-to-br from-[#2E2F32] to-[#38393C] bg-[#38393C]  "
           >
             <div className="flex flex-col items-center  mb-2">
               <div className="mr-2 border border-[#F6CE6D] rounded-full p-3 bg-[#393835]  flex">
