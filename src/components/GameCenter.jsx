@@ -182,7 +182,7 @@ const SliderComponent = () => {
 
   return (
     <div
-      className="relative mx-auto py-10 md:py-7 bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
+      className="relative mx-auto py-10  bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
       id="gameCenter"
     >
       <HeadingComponent
@@ -207,7 +207,7 @@ const SliderComponent = () => {
                   {slide.listItems.map((item, idx) => (
                     <li key={idx} className=" ">
                       <div className="p-2 border border-yellow-500 rounded-full bg-[#2F2D2B]">
-                        <item.icon className="text-yellow-500 w-5 h-5 md:w-7 md:h-7" />
+                        <item.icon className="text-[#F0DB13] w-5 h-5 md:w-7 md:h-7" />
                       </div>
                     </li>
                   ))}
@@ -227,11 +227,11 @@ const SliderComponent = () => {
       <div className="absolute gap-12 md:gap-20 left-1/2 transform -translate-x-1/2 flex space-x-8">
         <FaArrowLeft
           onClick={prevSlide}
-          className="text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200"
+          className="text-[#F0DB13] cursor-pointer text-3xl hover:text-yellow-200"
         />
         <FaArrowRight
           onClick={nextSlide}
-          className="text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200"
+          className="text-[#F0DB13] cursor-pointer text-3xl hover:text-yellow-200"
         />
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -240,7 +240,7 @@ const SliderComponent = () => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              currentIndex === index ? "bg-yellow-400" : "bg-yellow-100"
+              currentIndex === index ? "bg-[#F4D70F]" : "bg-yellow-100"
             }`}
           />
         ))}

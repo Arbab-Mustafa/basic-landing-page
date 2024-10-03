@@ -72,7 +72,7 @@ const ImageSlider = () => {
 
   return (
     <div
-      className="w-full flex flex-col items-center justify-center p-3 md:p-6 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="w-full flex flex-col items-center justify-center p-3 md:p-6  md:py-11 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="templateCase"
     >
       <HeadingComponent

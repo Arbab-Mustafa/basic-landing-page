@@ -14,7 +14,7 @@ const HeadingComponent = ({ headingKey, paragraphKey }) => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], [-190, 0]); // Comes from left
-  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [0, 0.8, 1]); // Fades in
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]); // Fades in
   return (
     <motion.div
       ref={ref}
@@ -24,7 +24,7 @@ const HeadingComponent = ({ headingKey, paragraphKey }) => {
       <div className="hidden lg:flex items-center ">
         {/* Left Icon */}
         <div className="flex justify-center gap-0 ">
-          <RxDragHandleVertical className="text-2xl  text-yellow-500" />
+          <RxDragHandleVertical className="text-2xl  text-[#F4D70F]" />
         </div>
 
         {/* Main Heading */}

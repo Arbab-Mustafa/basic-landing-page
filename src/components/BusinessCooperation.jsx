@@ -42,7 +42,7 @@ const Busniess = () => {
 
   return (
     <div
-      className="  px-4 py-8  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="businessCooperation"
     >
       <HeadingComponent
@@ -58,7 +58,7 @@ const Busniess = () => {
             {/* Render the icon */}
             <div className="flex justify-center items-center mb-4">
               <div className="hexagon flex justify-center items-center">
-                <slide.Icon className="text-2xl md:text-5xl text-[#DFB758]" />
+                <slide.Icon className="text-2xl md:text-5xl text-[#F0DB13]" />
               </div>
             </div>
 
@@ -66,9 +66,7 @@ const Busniess = () => {
             <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">
               {slide.title}
             </h3>
-            <p className="text-sm md:text-base text-white">
-              {slide.description}
-            </p>
+            <p className="text-sm  text-white">{slide.description}</p>
           </div>
         ))}
       </div>

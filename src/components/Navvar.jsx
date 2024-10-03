@@ -53,9 +53,9 @@ const Navvar = () => {
         <div className="mx-auto max-w-screen-xl   px-4 sm:px-6 lg:px-8 relative z-30">
           <div className="flex h-16 items-center justify-between  md:justify-center gap-1 md:gap-4 relative">
             {/*  */}
-            <div className="md:flex md:items-center md:gap-4">
-              <a className="block text-teal-600" href="#">
-                LOGO
+            <div className=" w-36">
+              <a className=" text-teal-600 " href="/">
+                <img src="/public/logo.png" alt="" />
               </a>
             </div>
             {/* for big screen */}

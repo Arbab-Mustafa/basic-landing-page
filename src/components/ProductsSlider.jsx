@@ -173,7 +173,7 @@ const SliderComponent = () => {
             <div className="flex flex-col md:flex-row items-center">
               {/* First Section: Card Component */}
               <div className="flex flex-col md:w-1/2 p-4 rounded-md   bg-gradient-to-r from-[#38393D] to-transparent">
-                <h2 className=" text-xl md:text-3xl font-light mb-4 text-[#948359]">
+                <h2 className=" text-xl md:text-3xl font-light mb-4 text-[#F4D70F]">
                   {slide.title}
                 </h2>
                 <ul className="space-y-4">
@@ -183,7 +183,7 @@ const SliderComponent = () => {
                       className="flex items-start   gap-3 md:gap-5 ]  "
                     >
                       <div className=" p-2  border border-yellow-500  rounded-full bg-[#2F2D2B]">
-                        <item.icon className="text-yellow-500 w-6 h-6 md:w-9 md:h-9  " />
+                        <item.icon className="text-[#F4D70F] w-6 h-6 md:w-9 md:h-9  " />
                       </div>
                       <div className="flex flex-col gap-2">
                         <h3 className="font-semibold text-[#FBFBFC]">

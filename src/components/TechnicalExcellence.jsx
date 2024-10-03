@@ -19,7 +19,7 @@ const CardComponent = () => {
     offset: ["start end", "end start"], // Trigger animations based on scroll position
   });
 
-  const rotateX = useTransform(scrollYProgress, [0, 1], ["90deg", " 0deg"]);
+  const rotateX = useTransform(scrollYProgress, [0, 1], ["50deg", " 0deg"]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
   // Define the card data
@@ -48,7 +48,7 @@ const CardComponent = () => {
 
   return (
     <div
-      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-4 md:py-8"
       id="technicalExcellence"
       ref={ref}
     >
@@ -67,7 +67,7 @@ const CardComponent = () => {
               <h2 className="text-lg md:text-2xl font-serif font-bold ">
                 {card.title}
               </h2>
-              <div className="text-5xl md:text-7xl mr-2 text-[#F8CF6F]">
+              <div className="text-5xl md:text-7xl mr-2 text-[#F0DB13]">
                 {card.icon}
               </div>
             </div>

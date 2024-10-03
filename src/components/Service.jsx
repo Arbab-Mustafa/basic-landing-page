@@ -53,7 +53,7 @@ const Service = () => {
 
   return (
     <div
-      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-3 md:py-11"
       id="serviceAdvantages"
       ref={ref}
     >
@@ -69,11 +69,11 @@ const Service = () => {
           >
             <div className="flex flex-col items-center  mb-2">
               <div className="mr-2 border border-[#F6CE6D] rounded-full p-3 bg-[#393835]  flex">
-                <span className="text-xl md:text-3xl  text-[#F8CF6F] ">
+                <span className="text-xl md:text-3xl  text-[#F0DB13] ">
                   {card.icon}
                 </span>
               </div>
-              <h2 className="text-lg md:text-xl font-serif font-bold ">
+              <h2 className="text-lg md:text-xl font-serif font-bold text-center ">
                 {card.title}
               </h2>
             </div>
