@@ -1,5 +1,6 @@
 import { FaTelegram } from "react-icons/fa6";
 import { GrSkype } from "react-icons/gr";
+
 const Footer = () => {
   return (
     <div className="flex gap-2 justify-center items-center bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-4 md:py-11">

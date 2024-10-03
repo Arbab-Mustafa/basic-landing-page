@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { TiThMenu } from "react-icons/ti";
 import { MdCancel } from "react-icons/md";
+
 const Navvar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);

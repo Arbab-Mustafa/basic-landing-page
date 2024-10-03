@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import HeadingComponent from "./H2";
 import { useTranslation } from "react-i18next";
+
 const images = [
   "https://doing.social/img/07.aa563c24.jpg",
   "https://doing.social/img/08.658b00b4.jpg",
@@ -129,15 +130,15 @@ const ImageSlider = () => {
       {/* Modal for selected image */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex   items-center justify-center z-50"
+          className="fixed top-14 md:top-9 inset-0 bg-black bg-opacity-70  mx-auto  h-[80vh] w-[100%] md:w-[70%] overflow-y-scroll  items-center justify-center z-50"
           onClick={closeModal}
         >
           <div
-            className="relative p-4 bg-white    rounded-lg shadow-lg"
+            className="relative p-1 md:p-4 bg-white    rounded-lg shadow-lg"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
           >
             <button
-              className="absolute top-1 right-0 p-2 text-gray-700"
+              className="absolute top-1 right-0 p-2 m-1 text-white md:text-gray-700"
               onClick={closeModal}
             >
               <FaTimes size={24} />
@@ -145,7 +146,7 @@ const ImageSlider = () => {
             <img
               src={selectedImage}
               alt="Selected"
-              className="w-[40vw]   rounded-md p-2 md:p-5"
+              className="w-full h-full   rounded-md p-2 md:p-5"
             />
           </div>
         </div>
