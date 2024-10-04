@@ -14,7 +14,7 @@ import ImageSlider from "./components/TemplateCase";
 
 function App() {
   return (
-    <div className=" bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]   ">
+    <div className="    ">
       <Navvar />
       <div className="bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
         <Hero />

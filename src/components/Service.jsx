@@ -53,7 +53,7 @@ const Service = () => {
 
   return (
     <div
-      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-3 md:py-11"
+      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-3 md:py-11 bg-no-repeat bg-cover"
       id="serviceAdvantages"
       ref={ref}
     >
@@ -61,11 +61,11 @@ const Service = () => {
         headingKey={t("headingsData.3.headingKey")}
         paragraphKey={t("headingsData.3.paragraphKey")}
       />
-      <div className="w-[80%]  mx-auto  justify-center md:gap-4  my-5 py-4 md:py-8 flex flex-wrap gap-2 ">
+      <div className=" justify-center mx-1   lg:mx-auto max-w-[66rem] my-5 py-4 flex flex-wrap gap-2 md:gap-5 ">
         {CardData.map((card, index) => (
           <div
             key={index}
-            className=" border  flex flex-col border-[#4D4D51] rounded-lg shadow-md md:rounded-lg   p-6  md:w-[20rem] py-6 md:py-8  text-white  bg-gradient-to-br from-[#2E2F32] to-[#38393C] bg-[#38393C]  "
+            className=" border  flex flex-col border-[#4D4D51] rounded-lg shadow-md md:rounded-[0.9rem]   px-3 w-[90%] md:w-[20rem] py-6 md:py-8  text-white  bg-gradient-to-br from-[#2E2F32] to-[#38393C] bg-[#38393C]  "
           >
             <div className="flex flex-col items-center  mb-2">
               <div className="mr-2 border border-[#F6CE6D] rounded-full p-3 bg-[#393835]  flex">
@@ -73,11 +73,13 @@ const Service = () => {
                   {card.icon}
                 </span>
               </div>
-              <h2 className="text-lg md:text-xl font-serif font-bold text-center ">
+              <h2 className="text-sm md:text-base   font-bold text-center ">
                 {card.title}
               </h2>
             </div>
-            <p className="text-white">{card.desc}</p>
+            <p className="text-[#646364]  text-xs text-center  md:text-base">
+              {card.desc}
+            </p>
           </div>
         ))}
       </div>

@@ -63,7 +63,7 @@ const Busniess = () => {
             </div>
 
             {/* Title and description from translations */}
-            <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">
+            <h3 className="text-lg md:text-xl text-white font-semibold mb-2">
               {slide.title}
             </h3>
             {/* <p className="text-sm  text-white">{slide.description}</p> */}
