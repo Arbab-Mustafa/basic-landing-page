@@ -130,23 +130,26 @@ const ImageSlider = () => {
       {/* Modal for selected image */}
       {selectedImage && (
         <div
-          className="fixed top-14 md:top-9 inset-0 bg-black bg-opacity-70  mx-auto  h-[80vh] w-[100%] md:w-[70%] overflow-y-scroll  items-center justify-center z-50"
-          onClick={closeModal}
+          className="fixed top-14 md:top-9 inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closeModal} // Close modal when clicking on the background
         >
           <div
-            className="relative p-1 md:p-4 bg-white    rounded-lg shadow-lg"
+            className="relative p-1 md:p-4 bg-white rounded-lg shadow-lg max-w-full md:max-w-[80%] max-h-[80vh] overflow-auto"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
           >
+            {/* Close Button */}
             <button
-              className="absolute top-1 right-0 p-2 m-1 text-white md:text-gray-700"
+              className="absolute top-3 right-3 p-2 text-gray-700 bg-white rounded-full border border-gray-400 hover:bg-gray-200"
               onClick={closeModal}
             >
               <FaTimes size={24} />
             </button>
+
+            {/* Modal Content */}
             <img
               src={selectedImage}
               alt="Selected"
-              className="w-full h-full   rounded-md p-2 md:p-5"
+              className="w-full h-[43rem] md:h-full rounded-md p-2 md:p-5 object-cover"
             />
           </div>
         </div>

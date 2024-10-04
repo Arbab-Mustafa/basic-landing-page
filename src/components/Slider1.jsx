@@ -67,7 +67,7 @@ const Slider1 = () => {
               key={index}
               className={`absolute inset-0 transition-transform duration-200 ease-in-out ${positionClass}`}
             >
-              <div className="flex flex-col md:flex-row items-center   md:relative  p-4">
+              <div className="flex flex-col-reverse md:flex-row items-center   md:relative  p-2">
                 {/* Main Image */}
                 <img
                   src={slide.imgSrc}
@@ -75,7 +75,7 @@ const Slider1 = () => {
                   className="w-[90%] md:w-[70%] h-[90%] object-contain md:h-[29rem] rounded-md"
                 />
                 {/* Text Section */}
-                <div className="flex flex-col  md:ml-3 md:absolute md:left-[45%] md:top-28">
+                <div className="flex flex-col  md:ml-3 md:absolute md:left-[50%] md:top-28">
                   <h2 className="text-xl md:text-5xl font-bold text-[#FFFFFF]">
                     {slide.title}
                   </h2>

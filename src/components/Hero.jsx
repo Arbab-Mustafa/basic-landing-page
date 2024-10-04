@@ -36,7 +36,7 @@ const Hero = () => {
       {/* Image Slider */}
       <div className="relative w-full h-56 md:h-72    z-1  overflow-hidden">
         <div
-          className="absolute  flex w-[300%] md:w-[150%] h-full gap-2 md:gap-3 transition-transform duration-500"
+          className="absolute  flex w-[300%] md:w-[150%] h-full gap-1 md:gap-3 transition-transform duration-500"
           style={{
             transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
           }}
@@ -46,7 +46,7 @@ const Hero = () => {
               key={image.id}
               src={image.src}
               alt={`Slide ${image.id}`}
-              className="w-1/3 h-full "
+              className="w-1/3 h-full object-contain"
             />
           ))}
         </div>
