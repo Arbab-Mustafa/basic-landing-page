@@ -42,14 +42,14 @@ const Busniess = () => {
 
   return (
     <div
-      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] bg-cover"
       id="businessCooperation"
     >
       <HeadingComponent
         headingKey={t("headingsData.5.headingKey")}
         paragraphKey={t("headingsData.5.paragraphKey")}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5   gap-9 md:gap-20 md:w-[80%] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 py-8 md:py-4  gap-9 md:gap-20 md:w-[80%] mx-auto">
         {slidesData.map((slide, index) => (
           <div
             key={index}
@@ -66,7 +66,7 @@ const Busniess = () => {
             <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">
               {slide.title}
             </h3>
-            <p className="text-sm  text-white">{slide.description}</p>
+            {/* <p className="text-sm  text-white">{slide.description}</p> */}
           </div>
         ))}
       </div>

@@ -18,7 +18,7 @@ const HeadingComponent = ({ headingKey, paragraphKey }) => {
   return (
     <motion.div
       ref={ref}
-      className="w-[60%] py-4 mx-auto"
+      className="w-[60%] py-4 mx-auto mb-3"
       style={{ x, opacity }}
     >
       <div className="hidden lg:flex items-center ">

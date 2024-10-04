@@ -50,11 +50,11 @@ const Navvar = () => {
 
   return (
     <div>
-      <header className="bg-black opacity-[0.87]   fixed top-0 left-0 right-0  w-full z-40   text-[#D8D8D8] ">
+      <header className="bg-black opacity-[0.91]   fixed top-0 left-0 right-0  w-full z-40   text-[#D8D8D8] ">
         <div className="mx-auto max-w-screen-xl   px-4 sm:px-6 lg:px-8 relative z-30">
-          <div className="flex h-16 items-center justify-between  md:justify-center gap-1 md:gap-4 relative">
+          <div className="flex md:h-16 items-center justify-between  md:justify-center gap-1 md:gap-4 relative">
             {/*  */}
-            <div className=" w-36">
+            <div className=" w-32 md:w-36">
               <a className=" text-teal-600 " href="/">
                 <img src="/public/logo.png" alt="" />
               </a>

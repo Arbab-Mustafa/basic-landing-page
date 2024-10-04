@@ -132,20 +132,24 @@ const SliderComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slidesData.length - 1 : prev - 1));
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
+    if (currentIndex < slidesData.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
+  // Automatically transition between slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === slidesData.length - 1 ? 0 : prev + 1
       );
     }, 5000);
-
     return () => {
       clearInterval(interval);
     };
@@ -153,77 +157,84 @@ const SliderComponent = () => {
 
   return (
     <div
-      className="relative mx-auto  py-10  md:py-7  bg-cover  bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')] "
+      className="relative mx-auto py-10 md:pt-7    bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
       id="ultimateProduct"
     >
       <HeadingComponent
         headingKey={t("headingsData.0.headingKey")}
         paragraphKey={t("headingsData.0.paragraphKey")}
       />
-      {/* Slide Container */}
-      <div className="flex flex-col items-center max-w-screen-lg mx-auto">
-        {/* Slide Content */}
-        {slidesData.map((slide, index) => (
-          <div
-            key={index}
-            className={`${
-              currentIndex === index ? "block" : "hidden"
-            } w-full transition-all duration-700 delay-200`}
-          >
-            <div className="flex flex-col md:flex-row items-center">
-              {/* First Section: Card Component */}
-              <div className="flex flex-col md:w-1/2 p-4 rounded-md   bg-gradient-to-r from-[#38393D] to-transparent">
-                <h2 className=" text-xl md:text-3xl font-light mb-4 text-[#F4D70F]">
-                  {slide.title}
-                </h2>
-                <ul className="space-y-4">
-                  {slide.listItems.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start   gap-3 md:gap-5 ]  "
-                    >
-                      <div className=" p-2  border border-yellow-500  rounded-full bg-[#2F2D2B]">
-                        <item.icon className="text-[#F4D70F] w-6 h-6 md:w-9 md:h-9  " />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <h3 className="font-semibold text-[#FBFBFC]">
-                          {item.heading}
-                        </h3>
-                        <p className="text-sm text-gray-400 font-normal">
-                          {item.description}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
-              {/* Second Section: Image */}
-              <div className="md:w-1/2 p-4">
-                <img
-                  src={slide.imgSrc}
-                  alt={slide.title}
-                  className="w-full h-auto object-contain rounded-lg"
-                />
+      {/* Slide Container */}
+      <div className="overflow-hidden w-full md:w-[75%] mx-auto ">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {slidesData.map((slide, index) => (
+            <div
+              key={index}
+              className="w-full flex-shrink-0 justify-center  mx-auto"
+            >
+              <div className="flex flex-col md:flex-row   ">
+                {/* First Section: Card Component */}
+                <div className="flex flex-col md:w-[40%] p-4 rounded-md bg-gradient-to-r from-[#38393D] to-transparent">
+                  <h2 className="text-xl md:text-3xl font-light mb-4 text-[#F4D70F]">
+                    {slide.title}
+                  </h2>
+                  <ul className="space-y-4">
+                    {slide.listItems.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 md:gap-5">
+                        <div className="p-2 border border-yellow-500 rounded-full bg-[#2F2D2B]">
+                          <item.icon className="text-[#F4D70F] w-6 h-6 md:w-9 md:h-9" />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <h3 className="font-semibold text-[#FBFBFC]">
+                            {item.heading}
+                          </h3>
+                          <p className="text-sm text-gray-400 font-normal">
+                            {item.description}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Second Section: Image */}
+                <div className="md:w-1/2 p-4">
+                  <img
+                    src={slide.imgSrc}
+                    alt={slide.title}
+                    className="w-full md:w-[80%] h-auto object-contain rounded-lg"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
       {/* Slider Buttons */}
-      <div className="absolute  gap-10 md:gap-12  left-1/2 transform -translate-x-1/2 flex space-x-8">
+      <div className="absolute gap-10 md:gap-12 left-1/2 transform -translate-x-1/2 flex space-x-8">
         <FaArrowLeft
           onClick={prevSlide}
-          className="text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200"
+          className={`text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200 ${
+            currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         />
         <FaArrowRight
           onClick={nextSlide}
-          className="text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200"
+          className={`text-yellow-300 cursor-pointer text-3xl hover:text-yellow-200 ${
+            currentIndex === slidesData.length - 1
+              ? "opacity-50 cursor-not-allowed"
+              : ""
+          }`}
         />
       </div>
 
       {/* Navigation Dots */}
-      <div className="absolute  left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-2 mt-4">
         {slidesData.map((_, index) => (
           <button
             key={index}

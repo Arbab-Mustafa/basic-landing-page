@@ -61,7 +61,7 @@ const Service = () => {
         headingKey={t("headingsData.3.headingKey")}
         paragraphKey={t("headingsData.3.paragraphKey")}
       />
-      <div className="w-[80%]  mx-auto  justify-center md:gap-4  py-4 md:py-8 flex flex-wrap gap-2 ">
+      <div className="w-[80%]  mx-auto  justify-center md:gap-4  my-5 py-4 md:py-8 flex flex-wrap gap-2 ">
         {CardData.map((card, index) => (
           <div
             key={index}

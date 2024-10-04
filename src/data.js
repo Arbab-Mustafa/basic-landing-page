@@ -228,7 +228,7 @@ const resources = {
           paragraphKey: "A wide range of high-end custom designs",
         },
         {
-          headingKey: "A wide range of high-end custom designs",
+          headingKey: "A wide range of high-end designs",
           paragraphKey: "Five easy steps to quickly open a site",
         },
       ],
@@ -405,7 +405,7 @@ const resources = {
           desc: "我们的直观界面确保所有用户都能轻松使用。",
         },
         {
-          heading: "24/7支持",
+          heading: "支持",
           desc: "我们提供全天候的支持，满足您的所有需求。",
         },
       ],
