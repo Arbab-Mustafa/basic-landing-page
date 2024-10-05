@@ -8,7 +8,9 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+body {
+  background-image: url("https://doing.social/img/bg1.b3f24c76.jpg");
+}
 .sticky-header {
   position: sticky;
   top: 0;
