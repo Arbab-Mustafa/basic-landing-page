@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // Icons for slider buttons and list items
@@ -17,9 +17,17 @@ import { BsUmbrellaFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { RiDeviceRecoverLine } from "react-icons/ri";
 import HeadingComponent from "./H2";
+import { useScroll, useTransform } from "framer-motion";
 
 const SliderComponent = () => {
   const { t } = useTranslation(); // Hook for translations
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   // Slide data (translated dynamically)
   const slidesData = [
@@ -159,6 +167,8 @@ const SliderComponent = () => {
     <div
       className="relative mx-auto py-10 md:pt-7    bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
       id="ultimateProduct"
+      ref={ref}
+      style={{ y }}
     >
       <HeadingComponent
         headingKey={t("headingsData.0.headingKey")}
