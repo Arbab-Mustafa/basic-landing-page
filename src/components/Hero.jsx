@@ -49,7 +49,7 @@ const Hero = () => {
               key={image.id}
               src={image.src}
               alt={`Slide ${image.id}`}
-              className="w-1/3 h-full md:object-contain"
+              className="w-1/3 h-full object-contain"
             />
           ))}
         </div>
