@@ -56,7 +56,7 @@ const Navvar = () => {
             {/*  */}
             <div className=" w-32 md:w-36">
               <a className=" text-teal-600 " href="/">
-                <img src="/public/logo.png" alt="" />
+                <img src="/logo.png" alt="" />
               </a>
             </div>
             {/* for big screen */}
