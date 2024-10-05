@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
