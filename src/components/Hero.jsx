@@ -32,7 +32,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden      pt-12  " id="frontPage">
+    <div
+      className="w-full overflow-x-hidden     pt-8  md:pt-12  "
+      id="frontPage"
+    >
       {/* Image Slider */}
       <div className="relative w-full h-56 md:h-72    z-1  overflow-hidden">
         <div
