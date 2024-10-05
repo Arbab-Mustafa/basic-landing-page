@@ -49,21 +49,21 @@ const Busniess = () => {
         headingKey={t("headingsData.5.headingKey")}
         paragraphKey={t("headingsData.5.paragraphKey")}
       />
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 py-8 md:py-4  gap-9 md:gap-20 md:w-[80%] mx-auto">
+      <div className=" md:w-[80%] mx-auto    flex  justify-center flex-col md:flex-row">
         {slidesData.map((slide, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center mx-1 md:mx-6 p-1    "
+            className="flex md:flex-col items-center justify-start text-center mx-auto md:mx-1   p-1  w-[13rem] md:w-auto   "
           >
             {/* Render the icon */}
-            <div className="flex justify-center items-center mb-4">
+            <div className="flex justify-center items-center mb-0 md:mb-4">
               <div className="hexagon flex justify-center items-center">
                 <slide.Icon className="text-2xl md:text-5xl text-[#F0DB13]" />
               </div>
             </div>
 
             {/* Title and description from translations */}
-            <h3 className="text-lg md:text-xl text-white font-semibold mb-2">
+            <h3 className="text-sm md:text-xl text-white font-semibold md:mb-2">
               {slide.title}
             </h3>
             {/* <p className="text-sm  text-white">{slide.description}</p> */}

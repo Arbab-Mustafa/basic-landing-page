@@ -12,13 +12,12 @@ html {
   top: 0;
 }
 .hexagon {
-  width: 80px; /* Adjust size for smaller hexagon */
-  height: 46.19px; /* Adjust height accordingly */
-  background-color: #252320; /* Background color for hexagon */
+  width: 100px; /* Larger default width */
+  height: 57.74px; /* Larger default height */
+  background-color: #252320;
   position: relative;
-  margin: 20px; /* Add margin as needed for spacing */
-  /* border: 3px solid #dfb758; Border color and thickness */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 .hexagon::before,
@@ -26,38 +25,38 @@ html {
   content: "";
   position: absolute;
   width: 0;
-  border-left: 40px solid transparent; /* Half of new width */
-  border-right: 40px solid transparent; /* Half of new width */
+  border-left: 50px solid transparent; /* Half of new width */
+  border-right: 50px solid transparent;
 }
 
 .hexagon::before {
-  bottom: 100%; /* Position above */
-  border-bottom: 23.09px solid #252320; /* Adjust for top triangle */
+  bottom: 100%;
+  border-bottom: 29.9px solid #252320; /* Top triangle */
 }
 
 .hexagon::after {
-  top: 100%; /* Position below */
-  border-top: 23.09px solid #252320; /* Adjust for bottom triangle */
+  top: 100%;
+  border-top: 29.9px solid #252320; /* Bottom triangle */
 }
 
-/* For larger screens */
-@media (min-width: 768px) {
+/* Media query for smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
   .hexagon {
-    width: 100px; /* Slightly larger for bigger screens */
-    height: 57.74px; /* Height adjustment */
+    width: 40px; /* Smaller hexagon width */
+    height: 23.09px; /* Smaller hexagon height */
   }
 
   .hexagon::before,
   .hexagon::after {
-    border-left: 50px solid transparent; /* Half of new width */
-    border-right: 50px solid transparent; /* Half of new width */
+    border-left: 20px solid transparent; /* Half of new width */
+    border-right: 20px solid transparent;
   }
 
   .hexagon::before {
-    border-bottom: 29.9px solid #252320; /* Half of new height for top */
+    border-bottom: 11.55px solid #252320; /* Top triangle for smaller hexagon */
   }
 
   .hexagon::after {
-    border-top: 29.9px solid #252320; /* Half of new height for bottom */
+    border-top: 11.55px solid #252320; /* Bottom triangle for smaller hexagon */
   }
 }
