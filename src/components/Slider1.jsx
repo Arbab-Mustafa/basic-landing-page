@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next"; // Importing for translations
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Importing icon components
+import { useTranslation } from "react-i18next";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Slider1 = () => {
-  const { t } = useTranslation(); // Hook for translations
+  const { t } = useTranslation();
 
   const slidesData = [
     {
@@ -19,103 +20,113 @@ const Slider1 = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
 
+  // Function to switch to the previous slide
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slidesData.length - 1 : prev - 1));
   };
 
+  // Function to switch to the next slide
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === slidesData.length - 1 ? 0 : prev + 1
-      );
-    }, 4000);
+  // Mouse event handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [slidesData.length]);
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const diffX = currentX - startX;
+    setCurrentTranslate(diffX);
+  };
+
+  const handleMouseUp = () => {
+    if (Math.abs(currentTranslate) > 100) {
+      currentTranslate < 0 ? nextSlide() : prevSlide();
+    }
+    setIsDragging(false);
+    setCurrentTranslate(0);
+  };
+
+  // Touch event handlers
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+    setCurrentTranslate(diffX);
+  };
+
+  const handleTouchEnd = () => {
+    if (Math.abs(currentTranslate) > 100) {
+      currentTranslate < 0 ? nextSlide() : prevSlide();
+    }
+    setIsDragging(false);
+    setCurrentTranslate(0);
+  };
+
+  // Auto slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
 
   return (
-    <div
-      className="relative  h-[30rem] bg-cover bg-center "
-      style={{
-        backgroundImage: `url('https://your-background-image-url.com/bg-image.jpg')`,
-      }}
-    >
-      {/* Main Slide Container */}
-      <div className="relative w-full ">
-        {slidesData.map((slide, index) => {
-          let positionClass = "";
-          if (currentIndex === index) {
-            positionClass = "translate-x-0"; // Current slide
-          } else if (
-            currentIndex - 1 === index ||
-            (currentIndex === 0 && index === slidesData.length - 1)
-          ) {
-            positionClass = "-translate-x-full"; // Previous slide
-          } else {
-            positionClass = "translate-x-full"; // Next slide
-          }
-
-          return (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-transform duration-200 ease-in-out ${positionClass}`}
-            >
-              <div className="flex flex-col-reverse md:flex-row items-center   md:relative  p-2">
-                {/* Main Image */}
-                <img
-                  src={slide.imgSrc}
-                  alt={slide.title}
-                  className="w-[90%] md:w-[70%] h-[90%] object-contain md:h-[29rem] rounded-md"
-                />
-                {/* Text Section */}
-                <div className="flex flex-col  md:ml-3 md:absolute md:left-[50%] md:top-28">
-                  <h2 className="text-xl md:text-5xl font-bold text-[#FFFFFF]">
-                    {slide.title}
-                  </h2>
-                  <p className="mt-2 text-lg  font-light md:text-4xl  text-center text-[#E0C378]">
-                    {slide.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Navigation Dots */}
-      <div className="absolute top-[19.5rem] md:top-[28.6rem] left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {slidesData.map((_, index) => (
-          <button
+    <div className="relative  md:w-[80%] md:h-[30rem] overflow-hidden mx-auto">
+      <div
+        className="flex transition-transform duration-300 "
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {slidesData.map((slide, index) => (
+          <div
             key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-              currentIndex === index ? "bg-gray-800" : "bg-gray-400"
-            }`}
-          />
+            className="relative w-full h-full flex-shrink-0 py-3"
+          >
+            <img
+              src={slide.imgSrc}
+              alt={slide.title}
+              className=" object-cover rounded-md"
+            />
+            <div className="md:absolute inset-0 flex flex-col items-center justify-center   text-white ">
+              <h2 className="text-2xl font-bold">{slide.title}</h2>
+              <p className="mt-2 text-lg">{slide.description}</p>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Navigation Icons */}
-      <div className="absolute top-[19rem] md:top-[28rem] left-1/2 transform -translate-x-1/2 flex space-x-4">
-        <div
+      {/* Navigation Buttons */}
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <FaChevronLeft
           onClick={prevSlide}
-          className="cursor-pointer text-gray-600 hover:text-gray-800 transition"
-        >
-          <FaChevronLeft size={30} />
-        </div>
-        <div
+          className="cursor-pointer text-yellow-400  "
+          size={30}
+        />
+        <FaChevronRight
           onClick={nextSlide}
-          className="cursor-pointer text-gray-600 hover:text-gray-800 transition"
-        >
-          <FaChevronRight size={30} />
-        </div>
+          className="cursor-pointer text-yellow-400   "
+          size={30}
+        />
       </div>
     </div>
   );

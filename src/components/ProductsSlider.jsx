@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-// Icons for slider buttons and list items
 import { HiCurrencyDollar } from "react-icons/hi2";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { GiQueenCrown } from "react-icons/gi";
@@ -20,16 +19,14 @@ import HeadingComponent from "./H2";
 import { useScroll, useTransform } from "framer-motion";
 
 const SliderComponent = () => {
-  const { t } = useTranslation(); // Hook for translations
+  const { t } = useTranslation();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
-  // Slide data (translated dynamically)
   const slidesData = [
     {
       title: t("slider.0.title"),
@@ -136,8 +133,57 @@ const SliderComponent = () => {
       imgSrc: "https://doing.social/img/pro_3.b16dd2d3.png",
     },
   ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleMouseDown = (e) => {
+    setStartX(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      const deltaX = e.clientX - startX;
+      if (deltaX < -50) {
+        // Dragged left
+        nextSlide();
+        setIsDragging(false);
+      } else if (deltaX > 50) {
+        // Dragged right
+        prevSlide();
+        setIsDragging(false);
+      }
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (isDragging) {
+      const deltaX = e.touches[0].clientX - startX;
+      if (deltaX < -50) {
+        // Dragged left
+        nextSlide();
+        setIsDragging(false);
+      } else if (deltaX > 50) {
+        // Dragged right
+        prevSlide();
+        setIsDragging(false);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
@@ -151,24 +197,27 @@ const SliderComponent = () => {
     }
   };
 
-  // Automatically transition between slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === slidesData.length - 1 ? 0 : prev + 1
       );
     }, 5000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, [slidesData.length]);
 
   return (
     <div
-      className="relative mx-auto py-10 md:pt-7    bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
+      className="relative mx-auto py-10 md:pt-7 bg-cover bg-[url('https://doing.social/img/bg2.6c7dac11.jpg')]"
       id="ultimateProduct"
       ref={ref}
       style={{ y }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <HeadingComponent
         headingKey={t("headingsData.0.headingKey")}
@@ -176,7 +225,7 @@ const SliderComponent = () => {
       />
 
       {/* Slide Container */}
-      <div className="overflow-hidden w-full md:w-[75%] mx-auto ">
+      <div className="overflow-hidden w-full md:w-[75%] mx-auto">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -184,10 +233,9 @@ const SliderComponent = () => {
           {slidesData.map((slide, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 justify-center  mx-auto"
+              className="w-full flex-shrink-0 justify-center mx-auto"
             >
-              <div className="flex flex-col md:flex-row   ">
-                {/* First Section: Card Component */}
+              <div className="flex flex-col md:flex-row">
                 <div className="flex flex-col md:w-[40%] p-4 rounded-md bg-gradient-to-r from-[#38393D] to-transparent">
                   <h2 className="text-xl md:text-3xl font-light mb-4 text-[#F4D70F]">
                     {slide.title}
@@ -211,7 +259,6 @@ const SliderComponent = () => {
                   </ul>
                 </div>
 
-                {/* Second Section: Image */}
                 <div className="md:w-1/2 p-4">
                   <img
                     src={slide.imgSrc}

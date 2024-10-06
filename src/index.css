@@ -7,8 +7,6 @@ html {
   scroll-snap-type: y mandatory;
 
   overflow-x: hidden;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none;
 }
 body {
   background-image: url("https://doing.social/img/bg1.b3f24c76.jpg");

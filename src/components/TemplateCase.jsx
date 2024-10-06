@@ -30,10 +30,10 @@ const images = [
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
   const { t } = useTranslation();
-
-  // Number of images to show per screen size
-  const itemsPerPage = window.innerWidth > 1024 ? 9 : 2; // Adjust for large screens (laptops) and small screens (mobiles)
+  const itemsPerPage = window.innerWidth > 1024 ? 9 : 3;
 
   // Handle next button click
   const nextSlide = () => {
@@ -71,10 +71,39 @@ const ImageSlider = () => {
     };
   }, [itemsPerPage]);
 
+  // Mouse event handlers for drag-and-swap functionality
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const diffX = startX - currentX;
+
+    if (Math.abs(diffX) > 100) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      setIsDragging(false);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <div
-      className="w-full flex flex-col items-center justify-center p-3 md:p-6  md:py-11 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
+      className="w-full flex flex-col items-center justify-center p-3 md:p-6 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="templateCase"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
     >
       <HeadingComponent
         headingKey={t("headingsData.4.headingKey")}
@@ -88,12 +117,12 @@ const ImageSlider = () => {
             .map((image, idx) => (
               <div
                 key={idx}
-                className="relative  p-2 md:p-4 border border-[#5D5D61] bg-[#38393D]"
+                className="relative p-2 border border-[#5D5D61] bg-[#38393D]"
               >
                 <img
                   src={image}
                   alt={`Slide ${idx}`}
-                  className="cursor-pointer object-cover w-full h-50 md:h-60  rounded-md  hover:shadow-xl transition-shadow"
+                  className="cursor-pointer object-cover w-full h-50 md:h-60 rounded-md hover:shadow-xl transition-shadow"
                   onClick={() => openModal(image)}
                 />
                 <h3 className="text-white p-1 md:p-2 font-medium">
@@ -130,26 +159,23 @@ const ImageSlider = () => {
       {/* Modal for selected image */}
       {selectedImage && (
         <div
-          className="fixed top-14 md:top-9 inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={closeModal} // Close modal when clicking on the background
+          className="fixed top-14 inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closeModal}
         >
           <div
-            className="relative p-1 md:p-4 bg-white rounded-lg shadow-lg max-w-full md:max-w-[80%] max-h-[80vh] overflow-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+            className="relative p-1 bg-white rounded-lg shadow-lg max-w-full md:max-w-[80%] max-h-[80vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               className="absolute top-3 right-3 p-2 text-gray-700 bg-white rounded-full border border-gray-400 hover:bg-gray-200"
               onClick={closeModal}
             >
               <FaTimes size={24} />
             </button>
-
-            {/* Modal Content */}
             <img
               src={selectedImage}
               alt="Selected"
-              className="w-full h-[43rem] md:h-full rounded-md p-2 md:p-5 object-cover"
+              className="w-full h-[43rem] md:h-full rounded-md p-2 object-cover"
             />
           </div>
         </div>
@@ -159,5 +185,3 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
-
-// Example usage
