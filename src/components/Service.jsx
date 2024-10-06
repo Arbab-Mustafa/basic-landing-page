@@ -10,11 +10,10 @@ import { RiBox3Fill } from "react-icons/ri";
 import { FaPeoplePulling } from "react-icons/fa6";
 import { GiSecretBook } from "react-icons/gi";
 import HeadingComponent from "./H2";
-import { useRef } from "react";
 
 const Service = () => {
   const { t } = useTranslation();
-  const ref = useRef(null); // Create a reference to the container
+  // Create a reference to the container
 
   // Define the card data
   const CardData = [
@@ -52,11 +51,7 @@ const Service = () => {
   ];
 
   return (
-    <div
-      className="w-full bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] py-3 md:py-11 bg-no-repeat bg-cover"
-      id="serviceAdvantages"
-      ref={ref}
-    >
+    <div className="w-full   py-3 md:py-11  " id="serviceAdvantages">
       <HeadingComponent
         headingKey={t("headingsData.3.headingKey")}
         paragraphKey={t("headingsData.3.paragraphKey")}

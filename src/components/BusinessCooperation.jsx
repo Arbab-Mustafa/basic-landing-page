@@ -42,7 +42,7 @@ const Busniess = () => {
 
   return (
     <div
-      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')] bg-cover"
+      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]  "
       id="businessCooperation"
     >
       <HeadingComponent

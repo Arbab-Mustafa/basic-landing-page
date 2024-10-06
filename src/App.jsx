@@ -1,9 +1,7 @@
 import "./App.css";
-
 import Busniess from "./components/BusinessCooperation";
 import Footer from "./components/footer";
 import GameSlider from "./components/GameCenter";
-
 import Hero from "./components/Hero";
 import Navvar from "./components/Navvar";
 import SliderComponent from "./components/ProductsSlider";
@@ -14,19 +12,40 @@ import ImageSlider from "./components/TemplateCase";
 
 function App() {
   return (
-    <div className=" bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]    bg-cover ">
+    <div className="app   snap-y snap-mandatory h-screen overflow-y-scroll">
       <Navvar />
-      <div className="bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]">
+      <div className="snap-start bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]  ">
         <Hero />
         <Slider1 />
       </div>
-      <SliderComponent />
-      <GameSlider />
-      <CardComponent />
-      <Service />
-      <ImageSlider />
-      <Busniess />
-      <Footer />
+
+      <div className="snap-start  ">
+        <SliderComponent />
+      </div>
+
+      <div className="snap-start md:h-screen ">
+        <GameSlider />
+      </div>
+
+      <div className="snap-start  md:h-screen ">
+        <CardComponent />
+      </div>
+
+      <div className="snap-start  md:h-screen ">
+        <Service />
+      </div>
+
+      <div className="snap-start  ">
+        <ImageSlider />
+      </div>
+
+      <div className="snap-start  ">
+        <Busniess />
+      </div>
+
+      <div className="snap-start  ">
+        <Footer />
+      </div>
     </div>
   );
 }

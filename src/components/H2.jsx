@@ -16,11 +16,7 @@ const HeadingComponent = ({ headingKey, paragraphKey }) => {
   const x = useTransform(scrollYProgress, [0, 1], [-190, 0]); // Comes from left
   const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]); // Fades in
   return (
-    <motion.div
-      ref={ref}
-      className="w-[60%] py-4 mx-auto mb-3"
-      style={{ x, opacity }}
-    >
+    <motion.div ref={ref} className="w-[60%] py-4 mx-auto mb-3" style={{ x }}>
       <div className="hidden lg:flex items-center ">
         {/* Left Icon */}
         <div className="flex justify-center gap-0 ">
