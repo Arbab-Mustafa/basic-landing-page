@@ -42,18 +42,18 @@ const Busniess = () => {
 
   return (
     <div
-      className="  px-4 py-8 md:py-14  bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]  "
+      className="px-4 py-8 md:py-14 bg-[url('https://doing.social/img/bg1.b3f24c76.jpg')]"
       id="businessCooperation"
     >
       <HeadingComponent
         headingKey={t("headingsData.5.headingKey")}
         paragraphKey={t("headingsData.5.paragraphKey")}
       />
-      <div className=" md:w-[80%] mx-auto    flex  justify-center flex-col md:flex-row">
+      <div className="md:w-[80%] mx-auto flex justify-center flex-col md:flex-row md:gap-7">
         {slidesData.map((slide, index) => (
           <div
             key={index}
-            className="flex md:flex-col items-center justify-start text-center mx-auto md:mx-1   p-1  w-[13rem] md:w-auto   "
+            className="flex md:flex-col items-center justify-start  text-center mx-auto md:mx-1 p-1 w-[13rem] md:w-auto relative"
           >
             {/* Render the icon */}
             <div className="flex justify-center items-center mb-0 md:mb-4">
@@ -66,12 +66,18 @@ const Busniess = () => {
             <h3 className="text-sm md:text-xl text-white font-semibold md:mb-2">
               {slide.title}
             </h3>
-            {/* <p className="text-sm  text-white">{slide.description}</p> */}
+            {/* Description can be uncommented */}
+            {/* <p className="text-sm text-white">{slide.description}</p> */}
+
+            {/* Dotted line only on large screens */}
+            {index < slidesData.length - 1 && (
+              <div className="border-b hidden md:flex md:absolute top-2 -right-12  px-2 border-dotted border-[#f0da1376]  h-5 w-[3.6rem] my-4" />
+            )}
           </div>
         ))}
       </div>
-      <div className="flex justify-center my-3 md:my-7 ">
-        <h2 className="bg-[#C5A960] bg-gradient-to-r  from-[#D7C897] to-[#C5A960] px-11 md:px-16 py-2 rounded-full">
+      <div className="flex justify-center my-3 md:my-7">
+        <h2 className="bg-[#C5A960] bg-gradient-to-r from-[#D7C897] to-[#C5A960] px-11 md:px-16 py-2 rounded-full">
           <a
             href="#"
             className="text-[#333333] text-center text-lg md:text-2xl font-semibold"
